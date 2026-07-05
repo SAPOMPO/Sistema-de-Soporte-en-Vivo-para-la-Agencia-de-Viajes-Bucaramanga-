@@ -34,6 +34,8 @@ btnPublicar.addEventListener("click", async () => {
             texto: textoLimpio,
             fecha: serverTimestamp()
         });
+        const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-16.mp3');
+        audio.play();
         
         mensajeEstado.innerText = "¡Reseña enviada con éxito!";
         mensajeEstado.style.color = "green";
@@ -57,6 +59,7 @@ onSnapshot(q, (snapshot) => {
         div.className = "resena-card";
         
         div.innerHTML = `
+            <img src="https://picsum.photos/50/50?random=${Math.random()}" style="border-radius: 50%; margin-right: 15px;">
             <p style="flex-grow: 1; margin-right: 15px;">${data.texto}</p>
             <button class="btn-eliminar">Eliminar</button>
         `;
